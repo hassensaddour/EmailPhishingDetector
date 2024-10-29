@@ -1,7 +1,7 @@
 import pandas as pd
 
 
-def load_data(file_path):
+def load_data():
     # Load CSV data
     df = pd.read_csv('CEAS_08.csv')
 

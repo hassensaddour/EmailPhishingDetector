@@ -1,16 +1,17 @@
-Subject: Urgent! Your Account Has Been Suspended
-From: security@unknown-domain.com
+From: support@paypal.com
 To: user@example.com
+Subject: Urgent: Verify Your Account Now
+Date: Mon, 29 Oct 2024 12:34:56 +0000
+MIME-Version: 1.0
+Content-Type: text/plain; charset="UTF-8"
 
 Dear User,
 
-We noticed unusual activity in your account. To protect your information, your account has been temporarily suspended. To restore access, please confirm your identity by following the instructions below.
+We have detected unusual activity in your account. Please verify your account immediately by clicking the link below:
 
-Click here to reset your password: http://bit.ly/secure-login
+https://secure.pay-pal.com/login
 
-For your security, we urge you to reset your password immediately.
+Thank you,
+PayPal Support
 
-Sincerely,
-The Security Team
-
-Attachment: malware.exe
+Attachments: invoice.pdf

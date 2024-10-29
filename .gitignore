@@ -11,3 +11,4 @@ __pycache__/
 
 # Ignore VSCode workspace settings (if using VSCode)
 .vscode/
+*config.py
