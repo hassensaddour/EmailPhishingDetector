@@ -1,0 +1,13 @@
+# Ignore virtual environments
+venv/
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+
+# Ignore model and data files, if you don’t want them in the repo
+*.pkl
+*.csv
+
+# Ignore VSCode workspace settings (if using VSCode)
+.vscode/
