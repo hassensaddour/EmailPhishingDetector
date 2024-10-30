@@ -1,5 +1,6 @@
+# main.py
 from email_analyzer.report import analyze_email
-import joblib
+
 
 if __name__ == "__main__":
     # Load a sample email for testing
@@ -17,5 +18,9 @@ if __name__ == "__main__":
                 print(f"  Domain Reputation: {link_info['Domain Reputation']}")
                 print(f"  Redirect Info: {link_info['Redirect Info']}")
                 print(f"  Domain Match: {link_info['Domain Match']}")
+        elif key == 'NLP Analysis':
+            print("\nNLP Analysis:")
+            for nlp_key, nlp_value in value.items():
+                print(f"  {nlp_key}: {nlp_value}")
         else:
             print(f"{key}: {value}")

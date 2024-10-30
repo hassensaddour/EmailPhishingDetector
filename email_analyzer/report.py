@@ -1,8 +1,10 @@
+# report.py
 import email
 import numpy as np
 from .parser import parse_email
 from .detection import detect_suspicious_keywords, detect_suspicious_links, detect_suspicious_attachments
 from email_analyzer.link_analysis import check_domain_reputation, check_redirects, is_matching_domain, extract_domain
+from email_analyzer.nlp_analysis import extract_entities, detect_intent, analyze_sentiment  # Import NLP functions
 import joblib  # Import joblib to load your ML model
 
 # Load the ML model and vectorizers at the start
@@ -37,11 +39,17 @@ def analyze_email(raw_email):
         'Suspicious Links': detect_suspicious_links(parsed_email['body']),
         'Suspicious Attachments': detect_suspicious_attachments(email.message_from_string(raw_email)),
         'Link Analysis': {},
-        'ML Classification': ''
+        'ML Classification': '',
+        'NLP Analysis': {}  # Add NLP Analysis section to the report
     }
 
     print("Suspicious Keywords Detected:", report['Suspicious Keywords'])  # Debugging line
     print("Suspicious Links Detected:", report['Suspicious Links'])  # Debugging line
+
+    # Add NLP Analysis
+    report['NLP Analysis']['Entities'] = extract_entities(parsed_email['body'])
+    report['NLP Analysis']['Intent'] = detect_intent(parsed_email['body'])
+    report['NLP Analysis']['Tone'] = analyze_sentiment(parsed_email['body'])
 
     # Analyze each link for reputation and redirection
     for link in report['Suspicious Links']:
